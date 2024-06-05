@@ -32,9 +32,11 @@
     input[type=text] {
       float: left;
       padding: 10px;
+      padding-left:20px;
+      padding-right:20px;
       font-size: 1.5vw;
       background-color: #778DA9;
-      border: 2px #E0E1DD solid;
+      border:none;
       border-radius: 15px;
       width: 40%;
       margin-left: 20%;
@@ -46,12 +48,13 @@
     }
 
     ::placeholder {
-      color: #E0E1DD
+      color: #0D1B2A;
+      font-family: "junge"
     }
 
     button {
       background-color: #D9D9D9;
-      color: black;
+      color: #0D1B2A;
       border: none;
       font-family: "Junge";
       font-size: 1.5vw;
@@ -66,6 +69,7 @@
       background-position: 90% 50%;
       background-repeat: no-repeat;
       outline: none;
+      height:inherit;
 
     }
 

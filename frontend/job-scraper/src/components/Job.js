@@ -27,17 +27,18 @@ const JobComponent = () => {
   return (
     <div className="JobComponent">
       {data.map(item => (
-        <div classname="Component">
+        <div className="Component">
           <div className="Logo">
-            <a href={item.link}><img src={item.logo} width="200px"
-              height="200px"></img></a>
+            <a href={item.link}><img src={item.logo}></img></a>
           </div>
           <div>
             <h1 className='Company'>{item.company}</h1>
           </div>
-          <div className="Skills">
-            <button>Java</button> {/* will need to be a dynamic component */}
-          </div>
+          {item.skills.map(skill => (
+            <div className="Skills">
+            <button>{skill}</button> {/* will need to be a dynamic component */}
+            </div>
+          ))}
           <div className="Position">
             <h3>{item.position}</h3>
           </div>
