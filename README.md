@@ -8,8 +8,8 @@ Python webscraping project utilizing Flask and React
 - CSS
 
 ## Libraries/Frameworks
-- React JS
-- Flask.py
+- React
+- Flask
 - BeautifulSoup
 
 ## Skeleton UI
