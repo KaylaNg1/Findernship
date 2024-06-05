@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Junge&display=swap');
+
+.JobComponent {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  grid-template-columns: repeat(auto-fill, 30vw);
+  gap: 10px;
+  padding: 10px;
+  font-size: 1vw;
+  font-family: "Julius Sans One";
+  color: #E0E1DD;
+
+  button {
+    width: 5vw;
+    height: 3vh;
+    font-size: 1vw;
+    background-color: red;
+    font-family: "Junge";
+    border: none;
+    background-color: #778DA9;
+    border-radius: 15px;
+  }
+
+  img{
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  img:hover {
+    opacity: 0.8;
+  }
+
+}
+
+/* Media query for responsive layout */
+@media (max-width: 768px) {
+  .JobComponent {
+    grid-template-columns: repeat(auto-fill, 50vw);
+    ;
+    /* Adjust column size for smaller screens */
+  }
+}
