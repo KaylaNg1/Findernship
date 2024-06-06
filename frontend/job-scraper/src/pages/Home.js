@@ -7,13 +7,13 @@ function Home() {
   return (
     <div className="Home">
       <div className="header">
-        <h1>Summer 25 SWE Internships</h1>
-
+        <h1>Findernship</h1>
+        <p>a web scraping application to find summer 25 internships</p>
+        </div>
         <div className="table-header">
           <input type="text" placeholder="Search.." />
           <button>Sort</button>
         </div>
-      </div>
       <div className="table">
         <JobComponent />
       </div>

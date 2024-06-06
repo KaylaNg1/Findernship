@@ -6,12 +6,8 @@
   padding: 0;
 
   .header {
-    position: sticky;
-    top:0;
     width: 100%;
     height: fit-content;
-    background-color: #0D1B2A;
-    z-index:2;
     padding-bottom:20px;
     padding-top:10px;
 
@@ -21,18 +17,31 @@
       color: #E0E1DD;
       font-size: 5vw;
     }
+
+    p{
+      position:relative;
+      top:0;
+      color: #E0E1DD;
+      font-family:'junge';
+      font-size:2v2;
+    }
   }
 
   .table-header {
     /* Style the search box inside the navigation bar */
+    position: sticky;
+    top:0;
+    background-color: #0D1B2A;
+    z-index:2;
     color: #E0E1DD;
     overflow: hidden;
     display: inline-flex;
-    width: 80%;
+    width: 100%;
     justify-content: center;
     align-items: center;
     height: fit-content;
     line-height: fit-content;
+    padding:20px;
 
     input[type=text] {
       float: left;
