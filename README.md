@@ -19,5 +19,7 @@ Python webscraping project utilizing Flask and React
 - Not all populous job posting sites are ethically scrapeable. As a result, there is a limit in job posting source diversity and inability to access vital application information for some of the jobs
 
 ## UI
-<img width="1470" alt="image" src="https://github.com/KaylaNg1/Findernship/assets/56608484/09e91e99-e09f-4bd9-aca2-15814c711f6e">
-
+<img width="1470" alt="image" src="https://github.com/KaylaNg1/Findernship/assets/56608484/e0b92a95-6bc3-4930-92d5-396e1e352651">
+loaded screen
+<img width="1470" alt="image" src="https://github.com/KaylaNg1/Findernship/assets/56608484/675c5f22-5bd0-4311-b0f0-cd82000cb595">
+job postings
