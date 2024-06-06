@@ -3,7 +3,7 @@
 
 .JobComponent {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Adjust min-width as needed */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust min-width as needed */
   gap: 50px;
   padding:20px;
   color: #0D1B2A;
@@ -14,11 +14,15 @@
   border-radius: 15px;
   padding: 20px;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
-  height: 600px; /* Set a fixed height for all components */
+  height: 50vw; /* Set a fixed height for all components */
+  /* Frame */
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
 }
 
 .Company{
-  font-family:'Julius Sans One'
+  font-family:'Julius Sans One';
+  font-size: 2vw;
 }
 
 .Skills {
@@ -27,44 +31,70 @@
 
 .Position{
   font-family:"Junge";
+  font-size: 1.2vw;
 }
 
-button {
+.Skill-Btn {
   display: inline-flex;
   align-items: center;
-  width: fit-content;
-  height: 4vh;
-  font-size: 1vw;
+  justify-content: center; /* Ensure text is centered both vertically and horizontally */
+  text-align: center;
+  width: auto; /* Adjust width based on content */
+  min-width: 5vw; /* Minimum width to ensure button doesn't get too small */
+  height: 4vh; /* Fixed height */
+  font-size: 1.2vw;
   background-color: #778DA9;
   font-family: "Junge";
   border: none;
   border-radius: 15px;
-  margin-left: 1vw;
-  padding: 10px;
-  text-align: center;
+  padding: 0 10px; /* Padding adjusted to maintain text fit */
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
-  margin-top:10px;
+  margin: 10px 1vw 0 1vw; /* Margin adjustments */
 }
 
 img {
-  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
-  /* object-fit: fill; */
-  width: 20vw;
-  height: 30vh;
-  background-color: white;
-  
-}
-img {
+  position:relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center; /* Ensure text is centered both vertically and horizontally */
+  text-align: center;
   width: 100%;
-  height: 100%; /* Set the height to 100% of the container */
+  height: 20vw; /* Set the height to 100% of the container */
   object-fit: contain;
   border-radius: 15px;
   background-color: white;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
 }
 
 img:hover {
   opacity: 0.8;
 }
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border-left-color: #778DA9;
+  animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 
 /* Media query for responsive layout */
 @media (max-width: 768px) {

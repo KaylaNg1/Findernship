@@ -21,13 +21,11 @@ def fetch_logo(company, hdr):
         logoPage = urlopen(Request(logo_url, headers=hdr))
         logoSoup = BeautifulSoup(logoPage, "html.parser")
         logoResults = logoSoup.find_all("img", class_="larger")
-        return logoResults[0]["src"] if logoResults else "/defaultJob.png"
+        return logoResults[0]["src"] if logoResults else "/" + company.replace(" ", "") + ".png"
     except:
-        return "/defaultJob.png"
+        return "/logos/" + company.replace(" ", "").lower() + ".png"
 
 def fetch_job_details(job):
-    print("2.")
-    print(job)
     job_url = job["link"]
     application = requests.get(job_url, verify=False)
     soup = BeautifulSoup(application.content, "html.parser")
@@ -41,8 +39,6 @@ def fetch_job_details(job):
                 skill_counts[skill] = count
 
     sorted_skills = sorted(skill_counts.items(), key=lambda item: item[1], reverse=True)
-    print("3.")
-    print(sorted_skills)
     job["skills"] = []
     for skill, count in sorted_skills:
         job["skills"].append(skill)
@@ -96,15 +92,12 @@ def jobSraper():
         output.append(newJob)
 
     with ThreadPoolExecutor(max_workers=10) as executor:
-        print("1")
         future_to_job = {executor.submit(fetch_job_details, job): job for job in output}
         for future in as_completed(future_to_job):
             job = future_to_job[future]
             try:
                 result = future.result()
                 jobs_list.append(result)
-                print("4")
-                print(result)
             except Exception as exc:
                 print(f"Job {job['company']} generated an exception: {exc}")
 

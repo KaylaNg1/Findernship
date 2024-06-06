@@ -4,6 +4,7 @@ import './Job.css'
 const JobComponent = () => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -14,6 +15,7 @@ const JobComponent = () => {
         }
         const data = await response.json();
         setData(data);
+        setLoading(false);
       } catch (error) {
         setError(error.message);
       }
@@ -21,8 +23,16 @@ const JobComponent = () => {
 
     fetchData(); // Call fetchData once when the component mounts
   }, []); // Empty dependency array means this effect runs once when the component mounts
-  if (!data) {
-    return <div>Loading...</div>;
+  if (loading) {
+    return (
+      <div className="loading-spinner">
+        <div className="spinner"></div>
+      </div>
+    );
+  }
+
+  if (!data.length) {
+    return <div>No job postings found.</div>;
   }
   return (
     <div className="JobComponent">
@@ -36,7 +46,7 @@ const JobComponent = () => {
           </div>
           {item.skills.map(skill => (
             <div className="Skills">
-            <button>{skill}</button> {/* will need to be a dynamic component */}
+            <button className = "Skill-Btn">{skill}</button> {/* will need to be a dynamic component */}
             </div>
           ))}
           <div className="Position">
