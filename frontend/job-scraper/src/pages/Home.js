@@ -1,9 +1,14 @@
-import React from 'react';
-import { Routes, Route } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
 import './Home.css';
 import JobComponent from '../components/Job';
 
 function Home() {
+  const [searchInput, setSearchInput] = useState("");
+
+  const handleSearchChange = (event) => {
+    setSearchInput(event.target.value);
+  };
+
   return (
     <div className="Home">
       <div className="header">
@@ -11,11 +16,16 @@ function Home() {
         <p>a web scraping application to find summer 25 internships</p>
         </div>
         <div className="table-header">
-          <input type="text" placeholder="Search.." />
+          <input 
+          type="text" 
+          placeholder="Search.." 
+          value={searchInput}
+          onChange={handleSearchChange}
+          />
           <button>Sort</button>
         </div>
       <div className="table">
-        <JobComponent />
+        <JobComponent searchQuery={searchInput}/>
       </div>
     </div>
   );

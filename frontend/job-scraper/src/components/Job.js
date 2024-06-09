@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Job.css'
 
-const JobComponent = () => {
+const JobComponent = ({ searchQuery }) => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -34,9 +34,16 @@ const JobComponent = () => {
   if (!data.length) {
     return <div>No job postings found.</div>;
   }
+  
+  const filteredData = data.filter((item) =>
+    item.company.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    item.position.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    item.skills.some(skill => skill.toLowerCase().includes(searchQuery.toLowerCase()))
+  );
+
   return (
     <div className="JobComponent">
-      {data.map(item => (
+      {filteredData.map(item => (
         <div className="Component">
           <div className="Logo">
             <a href={item.link}><img src={item.logo}></img></a>
@@ -46,7 +53,7 @@ const JobComponent = () => {
           </div>
           {item.skills.map(skill => (
             <div className="Skills">
-            <button className = "Skill-Btn">{skill}</button> {/* will need to be a dynamic component */}
+              <button className="Skill-Btn">{skill}</button> {/* will need to be a dynamic component */}
             </div>
           ))}
           <div className="Position">
