@@ -22,7 +22,6 @@ function Home() {
           value={searchInput}
           onChange={handleSearchChange}
           />
-          <button>Sort</button>
         </div>
       <div className="table">
         <JobComponent searchQuery={searchInput}/>

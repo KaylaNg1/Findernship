@@ -13,7 +13,7 @@ def index():
 @app.route('/getData', methods=['GET'])
 def upload_file():
     print("in GET endpoint")
-    data = jobSraper()
+    data = jobScraper()
     return jsonify(data)
 
 if __name__ == '__main__':

@@ -15,6 +15,7 @@
   padding: 20px;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
   height: 40vw; /* Set a fixed height for all components */
+  height:fit-content;
   /* Frame */
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
@@ -41,13 +42,13 @@
   text-align: center;
   width: auto; /* Adjust width based on content */
   min-width: 5vw; /* Minimum width to ensure button doesn't get too small */
-  height: 4vh; /* Fixed height */
+  height: fit-content; /* Fixed height */
   font-size: 1.2vw;
   background-color: #778DA9;
   font-family: "Junge";
   border: none;
   border-radius: 15px;
-  padding: 0 10px; /* Padding adjusted to maintain text fit */
+  padding: 20 10px; /* Padding adjusted to maintain text fit */
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
   margin: 10px 1vw 0 1vw; /* Margin adjustments */
 }
@@ -100,5 +101,17 @@ img:hover {
 @media (max-width: 768px) {
   .JobComponent {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust min-width as needed */
+  }
+
+  .Company{
+    font-size: 5vw;
+  }
+
+  .Position{
+    font-size: 4vw;
+  }
+
+  .Skill-Btn {
+    font-size: 3vw;
   }
 }
