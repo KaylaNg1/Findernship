@@ -2,7 +2,7 @@
 Python webscraping project utilizing Flask and React
 - Scrapes summer 2025 internship postings from github/indeed
 - Users can visualize numerous available rolls, the skills that are valued in an applicant, as well as directly access the application url
-- Search + Sort functionality
+- Search functionality
 
 ## Languages
 - Python
